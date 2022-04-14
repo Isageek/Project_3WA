@@ -11,11 +11,14 @@ abstract class AbstractRepository
     protected $connexion;
     protected $query;
 
+
     public function __construct()
     {
         $this->constructConnexion();
     }
     
+        /**affiche la connexion server et BD*/
+
     private function constructConnexion(){
         
         try {

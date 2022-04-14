@@ -9,10 +9,10 @@ require_once './model/Category.php';
 require_once './model/Atelier.php';
 
 
-
 class HomeController {
     
-    
+        /**affiche la page users*/
+
     public function home()
     {
         $repository = new UserRepository();
@@ -33,6 +33,7 @@ class HomeController {
         }
         $lorient = $users[0];
     
+        /**affiche la page category*/
 
         
         $categoryRepository = new CategoryRepository();
@@ -52,7 +53,8 @@ class HomeController {
         $poisson = $category[0];
         
         
-        
+            /**affiche la page atelier*/
+
         $atelierRepository = new AtelierRepository();
         $datas = $atelierRepository->fetchAll();
         

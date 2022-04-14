@@ -23,4 +23,24 @@ class CategoryRepository extends AbstractRepository {
         
         return $data;
     }
+    
+    public function InsertCat($category)
+    {
+        try {
+            $query = $this->connexion->query('UPDATE category SET description = :description WHERE id = :id');
+            
+            if ($query) {
+                
+                $query->bindValue(':id', $category-> getId());
+                $query->bindValue(':description', $category-> getDescription());
+                
+                return $query->execute();
+            }
+        }
+        catch (Exception $e) {
+            
+            return $e ;
+        }
+    }
+    
 }

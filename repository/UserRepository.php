@@ -20,8 +20,12 @@ class UserRepository extends AbstractRepository {
         return $data;
     }
     
+    
+    
     public function insertUser($user): bool
     {
+            $password = password_hash($password, PASSWORD_BCRYT);
+
         try {
             $query = $this->connexion->prepare('INSERT INTO users (last_name, first_name, email, password, role) 
                                                 VALUES (:lastName, :firstName, :email, :password, :role )');
@@ -38,5 +42,7 @@ class UserRepository extends AbstractRepository {
             return false;
         }
     }
+    
+    
 
 }

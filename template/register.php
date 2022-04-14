@@ -12,9 +12,9 @@
         <input type="text" name="usersLastName" 
         placeholder="LastName...">
         <input type="password" name="usersPwd" 
-        placeholder="Password...">
+        placeholder="Password..." required>
         <input type="password" name="pwdRepeat" 
-        placeholder="Repeat password">
+        placeholder="Repeat password" required>
         <button type="submit" name="submit">Valider</button>
     </form>
     
