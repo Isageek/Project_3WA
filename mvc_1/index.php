@@ -8,6 +8,7 @@ require_once './controller/HomeController.php';
 
 
 
+
 $url = $_GET['url'] ?? "home";
 
 switch($url){
@@ -17,6 +18,9 @@ switch($url){
         $homeController = new HomeController();
         $homeController->home();
         break;
+        
+        
+        
     
     case "login" : 
         $homeController = new HomeController();

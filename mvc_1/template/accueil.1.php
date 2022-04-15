@@ -29,13 +29,12 @@
 
     <table>
         <thead>
-            
             <tr>
                 <th>lastName</th>
                 <th>firstName</th>
                 <th>email</th>
                 <th>role</th>
-                </tr>
+            </tr>
         </thead>
     <tbody>
         
@@ -60,11 +59,13 @@
 
     
     <table>
-    <thead>
-        <th>id</th>
-        <th>name</th>
-        <th>description</th>
-    </thead>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>description</th>
+            </tr>
+        </thead>
     <tbody>
         
         <?php

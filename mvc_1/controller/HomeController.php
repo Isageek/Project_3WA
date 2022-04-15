@@ -9,6 +9,9 @@ require_once './model/Category.php';
 require_once './model/Atelier.php';
 
 
+
+
+
 class HomeController {
     
         /**affiche la page users*/

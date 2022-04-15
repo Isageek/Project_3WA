@@ -1,29 +1,7 @@
-<!doctype html>
-    <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <title>Accueil</title>
-    </head>
-    <body>
-        
-
-        <style>
-        table,
-        td {
-            border: 1px solid #333;
-            font-size:2rem;
-
-        }
-    
-        thead,
-        tfoot {
-            background-color: #333;
-            color: #fff;
-        }
-        
-        </style>
-    
-                <!--READ table Users-->
+<?php 
+    include_once 'header.php';
+?>
+<!--READ table Users-->
                 
         <h1>Liste des participants</h1>
 
@@ -35,7 +13,7 @@
                 <th>firstName</th>
                 <th>email</th>
                 <th>role</th>
-                </tr>
+            </tr>
         </thead>
     <tbody>
         
@@ -54,17 +32,18 @@
     </tbody>
     </table>
     
-        
     <!--READ table category-->
         <h1>Liste de categories d'ateliers</h1>
 
     
     <table>
-    <thead>
-        <th>id</th>
-        <th>name</th>
-        <th>description</th>
-    </thead>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>description</th>
+            </tr>
+        </thead>
     <tbody>
         
         <?php
@@ -81,8 +60,10 @@
         ?>
     </tbody>
     </table>
-    
-    <!-- READ table Atelier-->
+
+
+
+<!-- READ table Atelier-->
         <h1>Liste ateliers réservés</h1>
     
     <table>
@@ -104,14 +85,14 @@
                 <td><?= $shop->getCategory_id();?></td>
                 <td><?= $shop->getUrl_picture();?></td>
 
-                
             </tr>
             <?php
         }
         ?>
+        
     </tbody>
     </table>
-    
-    </body>
-</html>
-    
+
+<div id="footer">
+        <p>&copy; Isa Geek <?php echo date("Y"); ?></p>
+    </div>
