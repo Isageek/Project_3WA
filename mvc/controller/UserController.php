@@ -2,6 +2,7 @@
 require_once "./view/UserView.php";
 require_once "./repository/UserRepository.php";
 require_once './services/Utils.php';
+require_once "./view/AdminView.php";
 
 
 
@@ -9,8 +10,6 @@ class UserController
 {
     public function register(): void
     {
-        var_dump($_SESSION); die();
-
         $csrf = $_POST['csrf'];
         $nom = htmlspecialchars($_POST['prenom']); 
         $prenom = htmlspecialchars($_POST['nom']); 
@@ -28,15 +27,19 @@ class UserController
         $utils = new Utils();
         $csrf = $utils->addCsrf();
         $view = new UserView();
-
-            if($valide) {
-                echo $view->viewRegister_ok($csrf);
-              } else {
-                echo $view-> error($csrf);
-              }
+            if(isset($_POST["admin"]) && $_POST["admin"]==="ok"){
+                $adminView= new AdminView();
+                echo $adminView->afficheAdmin($csrf); die();
+            }
+                    if($valide) {
+                        echo $view->viewRegister_ok($csrf);
+                      } else {
+                        echo $view-> error($csrf);
+                    }
         //} else {
             // echo $view-> error($csrf);
        // }
+       
           
      }
     

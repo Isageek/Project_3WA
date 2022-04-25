@@ -5,6 +5,8 @@
 require_once './controller/HomeController.php';
 require_once './controller/UserController.php';
 require_once './controller/ProductController.php';
+require_once './controller/AdminController.php';
+
 
 
 
@@ -43,6 +45,27 @@ switch($url){
         $productController->ateliers();
         break;
         
+    // Route admin
+    case "admin" : 
+        $adminController= new AdminController();
+        $adminController->admin();
+        break;
+        
+    // Route update
+    case "update" : 
+        $adminController= new AdminController();
+        $adminController->update();
+        break;
+    //Route valideModify
+    case "valideModify" : 
+        $adminController= new AdminController();
+        $adminController->valideModify();
+        break;
+    //Route valideModify
+    case "valideDelete" : 
+        $adminController= new AdminController();
+        $adminController->valideDelete();
+        break;
         
     default :
         echo "404";

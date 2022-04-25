@@ -82,7 +82,7 @@ class UserView
         $this->setHeader(str_replace("{%csrf%}",$csrf, $this->getHeader()));
         $this->setFooter(file_get_contents("./template/footer.html"));
         $this->setTemplate($this->getHeader().$this->getBody().$this->getFooter());
-        return $this->getTemplate();$contents = file_get_contents("./template/register.html");
+        return $this->getTemplate();
         
     }
      public function viewRegister_ok($csrf)

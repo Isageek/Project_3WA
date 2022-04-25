@@ -52,7 +52,7 @@ class ProductRepository extends AbstractRepository {
         try {
             /**écrire et préparer la requête*/
             
-            $query = $this->connexion->query('SELECT * FROM atelier a JOIN category c on a.category_id WHERE a.category_id = c.id');
+            $query = $this->connexion->query('SELECT a.id, a.created_at, a.category_id, a.url_picture, c.name, c.description FROM atelier a JOIN category c on a.category_id WHERE a.category_id = c.id');
             if ($query) {
                 
                 /** stocker le résult dans un tableau associatif*/
@@ -100,12 +100,37 @@ class ProductRepository extends AbstractRepository {
                 return $query->execute();
             }
         }
-        
-    }
-    
-
-
-
-
-
-
+    public function updateAtelier($created_at, $category_id, $url_picture, $id)
+    {
+        $data = null;
+        try {
+            /**écrire et préparer la requête*/
+            
+            $query = $this->connexion->prepare('UPDATE atelier SET created_at=:created_at, category_id=:category_id, url_picture=:url_picture WHERE id=:id');
+            
+                $query->bindParam(':created_at', $created_at);
+                $query->bindParam(':category_id', $category_id);
+                $query->bindParam(':url_picture', $url_picture);
+                $query->bindParam(':id', $id);
+                $data = $query->execute();
+                return $data;
+        } catch (Exception $e) {
+        }
+        return $data;
+   }
+   public function deleteAtelier($id)
+    {
+        $data = null;
+        try {
+            /**écrire et préparer la requête*/
+            
+            $query = $this->connexion->prepare('DELETE FROM atelier WHERE id=:id');
+            
+                $query->bindParam(':id', $id);
+                $data = $query->execute();
+                return $data;
+        } catch (Exception $e) {
+        }
+        return $data;
+   }
+}

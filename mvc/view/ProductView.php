@@ -152,7 +152,7 @@ class ProductView
         
             $shop .= $this->getAtelier();
     
-    }
+            }
     
         $this->setBody(str_replace('{%ateliers%}', $shop, $this->getBody()));
         $this->setTemplate($this->getHeader().$this->getBody().$this->getFooter());
