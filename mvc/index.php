@@ -40,6 +40,8 @@ switch($url){
         $productController->category();
         break;
         
+    // Route ateliers
+
     case "ateliers" : 
         $productController= new ProductController();
         $productController->ateliers();
@@ -61,7 +63,7 @@ switch($url){
         $adminController= new AdminController();
         $adminController->valideModify();
         break;
-    //Route valideModify
+    //Route valideDelete
     case "valideDelete" : 
         $adminController= new AdminController();
         $adminController->valideDelete();

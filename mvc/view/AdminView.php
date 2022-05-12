@@ -109,7 +109,6 @@ class AdminView
     */
     public function afficheAdmin($csrf)
     {
-        //var_dump($_SESSION);die();
         $this->setHeader(file_get_contents("./template/headerAdmin.html"));
         $this->setBody(file_get_contents("./template/edit.html"));
         $this->setBody(str_replace("{%csrf%}",$csrf, $this->getBody()));
@@ -120,7 +119,6 @@ class AdminView
     }
     public function afficheAtelierAdmin($datas2, $csrf)
     {
-        //var_dump($_SESSION);die();
         $shop="";
         foreach ($datas2 as $data2) {
             

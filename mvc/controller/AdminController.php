@@ -19,17 +19,14 @@ class AdminController
     
     public function verifyAdmin()
     {
-        if(isset($_SESSION["user"])){
-        $user = unserialize($_SESSION["user"]);
+    
         $repository = new UserRepository();
         $data = $repository->fetchOneUser($user->getEmail());
-       if($data["role"]==='admin'){
-            return 'ok';
-        }
-        }else{ 
-            $view = new HomeView();
-            echo $view->constructAccueil();
-        }
+        
+        
+        $view = new HomeView();
+        echo $view->constructAccueil();
+
     }
     public function update(): void
     {

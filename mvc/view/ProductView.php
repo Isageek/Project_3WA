@@ -130,7 +130,6 @@ class ProductView
         }
         $this->setBody(str_replace('{%category%}', $cat, $this->getBody()));
         $this->setTemplate($this->getHeader().$this->getBody().$this->getFooter());
-        //var_dump($this->getTemplate()); die();
         return $this->getTemplate(); 
     }
     public function afficheAteliers($datas2)
@@ -156,7 +155,6 @@ class ProductView
     
         $this->setBody(str_replace('{%ateliers%}', $shop, $this->getBody()));
         $this->setTemplate($this->getHeader().$this->getBody().$this->getFooter());
-
-        return $this->getTemplate().$this->getBody().$this->getFooter();
+        return $this->getTemplate();
     }
 }

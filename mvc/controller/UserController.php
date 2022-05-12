@@ -21,7 +21,6 @@ class UserController
         $user->setEmail($email);
         $user->setRole('user');
         $user->setPassword($password);
-        //if($_SESSION['csrf']===$csrf){
         $userRepository = new UserRepository();
         $valide = $userRepository->insertUser($user); 
         $utils = new Utils();
@@ -36,11 +35,7 @@ class UserController
                       } else {
                         echo $view-> error($csrf);
                     }
-        //} else {
-            // echo $view-> error($csrf);
-       // }
        
-          
      }
     
     public function login()

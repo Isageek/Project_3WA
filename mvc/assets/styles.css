@@ -396,6 +396,27 @@ label {
 .ateliers .box-container .box:hover .content{
   transform: translateY(100%);
 }
+/**section table atelier*/
+
+.atelier .box-container .content{
+  box-shadow: 1rem 1rem 1rem 1rem black;
+  border-radius: .1rem;
+  margin: 5rem;
+}
+
+.atelier .box-container .content img{
+    height: 90px;
+    width:150px;
+    display:block;
+    margin:auto;
+}
+.atelier .box-container .content p{
+    color:#777;
+    font-size: 15px;
+    font-family:cursive;
+    line-height: 2;
+    text-align:center;
+}
 
 /**fin ateliers*/
 
@@ -442,7 +463,15 @@ label {
     color:#ff7800;
 
 }
+/** table categorie/ galerie*/
+.box-category{
+    margin: 3rem;
+}
 
+.box-category p{
+    text-align:center;
+    font-family: cursive;
+}
 
 /**fin galerie*/
 
@@ -481,7 +510,7 @@ label {
 }
 
 .review .box-container .box p{
-    color: #999;
+    color: #D2691E;
     font-size: 1.5rem;
     line-height: 1.5;
     padding-top: 2rem;

@@ -25,10 +25,3 @@ class HomeController {
     }
 
 }
-        /**
-        $categoryRepository = new CategoryRepository();
-        $data=$categoryRepository->fetchAll();
-     
-        $atelierRepository = new AtelierRepository();
-        $data2 = $atelierRepository->fetchAll();
-        */
