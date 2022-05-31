@@ -76,7 +76,6 @@ class UserView
     */
     public function viewUser($csrf)
     {
-        //var_dump($_SESSION);die();
         $this->setHeader(file_get_contents("./template/header.html"));
         $this->setBody(file_get_contents("./template/accueil.html"));
         $this->setHeader(str_replace("{%csrf%}",$csrf, $this->getHeader()));

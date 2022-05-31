@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang ="fr">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Ateliers Culinaires gratuits de recettes africaines</title>
+        <meta name="description" content="Des ateliers culinaires gratuits, pour découvrir des plats et des recettes typiquement africains comme le maffé, le tiébou djeen, le aloko et le poulet braisé."/>
+
+        
+        <!--lien font Awesome-->
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <!-- fichier css-->
+        <link rel="stylesheet" href="../assets/styles.css" type="text/css"/>
+   
+    </head>
+
+
+    <body>
+
+    <!--début header-->
+    
+    <?php include ('header.php');?>
+    
+    <!--fin header-->
+
+        <form action="" class="register" id="register">
+            <h3>Inscrivez-vous ! </h3>
+                    
+                <label for="selection">Ateliers</label>
+                <select name="courses" id="ateliers">
+                        <option value="">--Choisir--</option>
+                        <option value="meat">Viande</option>
+                        <option value="fish">Poisson</option>
+                        <option value="vegan">Végétarien</option>
+                </select>
+                <label for="start"> Votre date:</label>
+        
+                <input type="date" id="start" name="trip-start"
+                        value="2022-03-22"
+                        min="2022-03-22" max="2022-12-31">
+                    
+                <input type="name" placeholder=" nom" class="box">
+                <input type="firsname" placeholder="prénom" class="box">
+                <input type="phone" placeholder="téléphone" class="box">
+                <button class=btn>valider</button>
+                    
+        </form>
+        
+    </body>
+</html>
+    
+    

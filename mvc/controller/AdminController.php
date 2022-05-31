@@ -11,10 +11,8 @@ class AdminController
         $view = new AdminView();
         $utils = new Utils();
         $csrf = $utils->addCsrf();
-        //if($this->verifyAdmin()==='ok'){
         echo $view->afficheAdmin($csrf); die();
-        //}
-        //echo $view->constructAccueil();
+        
     }
     
     public function verifyAdmin()

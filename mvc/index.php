@@ -47,6 +47,13 @@ switch($url){
         $productController->ateliers();
         break;
         
+    // Route témoignages
+
+    case "temoignages" : 
+        $reviewController= new ReviewController();
+        $reviewController->temoignages();
+        break;
+        
     // Route admin
     case "admin" : 
         $adminController= new AdminController();

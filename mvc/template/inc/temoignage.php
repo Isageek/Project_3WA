@@ -1,4 +1,6 @@
+<?php include ('.inc/header.php'); ?>
 
+    <body>
     <section class="background" id="background">
     
             <h1 class="heading"> Nos visiteurs <span> témoignent </span> de leur expérience</h1>
@@ -93,4 +95,5 @@
         
         </section>
         
-        <script src="app.js"></script>
+<?php include ('inc/footer.php'); ?>
+</body>
