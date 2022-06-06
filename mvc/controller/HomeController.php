@@ -1,12 +1,10 @@
 <?php
 
-
 require_once './repository/UserRepository.php';
 require_once './view/HomeView.php';
-
-
 require_once './model/User.php';
 require_once './model/Category.php';
+require_once './model/Atelier.php';
 require_once './model/Atelier.php';
 require_once './services/Utils.php';
 require_once './view/UserView.php';
@@ -23,5 +21,5 @@ class HomeController {
         $view = new UserView();
         echo $view->viewUser($csrf);
     }
-
+    
 }

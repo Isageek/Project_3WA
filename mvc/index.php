@@ -6,6 +6,9 @@ require_once './controller/HomeController.php';
 require_once './controller/UserController.php';
 require_once './controller/ProductController.php';
 require_once './controller/AdminController.php';
+require_once './controller/TemoignagesController.php';
+require_once './controller/AproposController.php';
+require_once './controller/BlogController.php';
 
 
 
@@ -32,7 +35,6 @@ switch($url){
         $userController= new UserController();
         $userController->register();
         break;
-        
     
     // Route category
     case "category" : 
@@ -50,8 +52,21 @@ switch($url){
     // Route témoignages
 
     case "temoignages" : 
-        $reviewController= new ReviewController();
-        $reviewController->temoignages();
+        $temoignagesController= new TemoignagesController();
+        $temoignagesController->temoignages();
+        break;
+        
+     // Route A propos
+
+    case "a propos" : 
+        $aproposController= new AproposController();
+        $aproposController-> apropos();
+        break;
+        // Route A propos
+
+    case "Blog" : 
+        $blogController= new BlogController();
+        $blogController-> blog();
         break;
         
     // Route admin

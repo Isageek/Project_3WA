@@ -1,15 +1,13 @@
 <?php
-class HomeView
+
+
+class AproposView
 {
     private $header;
     private $body;
     private $footer;
     private $template;
-    private $category;
-    private $atelier;
-    private $temoignages;
-    private $a_propos;
-
+    private $apropos;
 
 
     /**
@@ -75,16 +73,37 @@ class HomeView
     {
         return $this->template;
     }
-    
-    public function constructAccueil()
+    /**
+    * @params string $apropos
+    */
+    public function setApropos($apropos)
     {
-        $this->setHeader(file_get_contents("./template/header.html"));
-        $this->setBody(file_get_contents("./template/accueil.html"));
-        $this->setFooter(file_get_contents("./template/footer.html"));
-        $this->setTemplate($this->getHeader().$this->getBody().$this->getFooter());
-        return $this->getTemplate();
+        $this->apropos=$apropos;
+        
+    }
+    /**
+     * return string $this->apropos
+     */
+    public function getApropos()
+    {
+        return $this->apropos;
     }
     
-}          
+    public function afficheApropos()
+    {
+        $presentation='';
+        $this->setHeader(file_get_contents("./template/header.html"));
+        $this->setFooter(file_get_contents("./template/footer.html"));
+        $this->setBody(file_get_contents("./template/apropos.html"));
+            
+        $this->setApropos(file_get_contents("./template/apropos.html"));
+        $presentation = $this->getApropos();
+        
+        {
+        $this->setBody(str_replace('{%apropos%}', $presentation, $this->getBody()));
+        $this->setTemplate($this->getHeader().$this->getBody().$this->getFooter());
+        return $this->getTemplate();
+        }
+    }
 
-
+}

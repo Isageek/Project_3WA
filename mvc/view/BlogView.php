@@ -1,15 +1,12 @@
 <?php
-class HomeView
+
+class BlogView
 {
     private $header;
     private $body;
     private $footer;
     private $template;
-    private $category;
-    private $atelier;
-    private $temoignages;
-    private $a_propos;
-
+    private $blog;
 
 
     /**
@@ -75,16 +72,37 @@ class HomeView
     {
         return $this->template;
     }
-    
-    public function constructAccueil()
+    /**
+    * @params string $blog
+    */
+    public function setBlog($blog)
     {
-        $this->setHeader(file_get_contents("./template/header.html"));
-        $this->setBody(file_get_contents("./template/accueil.html"));
-        $this->setFooter(file_get_contents("./template/footer.html"));
-        $this->setTemplate($this->getHeader().$this->getBody().$this->getFooter());
-        return $this->getTemplate();
+        $this->blog=$blog;
+        
+    }
+    /**
+     * return string $this->blog
+     */
+    public function getBlog()
+    {
+        return $this->blog;
     }
     
-}          
+    public function afficheBlog()
+    {
+        $actus='';
+        $this->setHeader(file_get_contents("./template/header.html"));
+        $this->setFooter(file_get_contents("./template/footer.html"));
+        $this->setBody(file_get_contents("./template/blog.html"));
+        
+        $this->setBlog(file_get_contents("./template/blog.html"));
+        $actus = $this->getBlog();
+        
+        {
+        $this->setBody(str_replace('{%blog%}', $actus, $this->getBody()));
+        $this->setTemplate($this->getHeader().$this->getBody().$this->getFooter());
+        return $this->getTemplate();
+        }
+    }
 
-
+}

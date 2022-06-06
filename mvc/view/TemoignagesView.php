@@ -1,15 +1,12 @@
 <?php
-class HomeView
+
+class TemoignagesView
 {
     private $header;
     private $body;
     private $footer;
     private $template;
-    private $category;
-    private $atelier;
     private $temoignages;
-    private $a_propos;
-
 
 
     /**
@@ -75,16 +72,37 @@ class HomeView
     {
         return $this->template;
     }
-    
-    public function constructAccueil()
+    /**
+    * @params string $temoignages
+    */
+    public function setTemoignages($temoignages)
     {
-        $this->setHeader(file_get_contents("./template/header.html"));
-        $this->setBody(file_get_contents("./template/accueil.html"));
-        $this->setFooter(file_get_contents("./template/footer.html"));
-        $this->setTemplate($this->getHeader().$this->getBody().$this->getFooter());
-        return $this->getTemplate();
+        $this->temoignages=$temoignages;
+        
+    }
+    /**
+     * return string $this->temoignages
+     */
+    public function getTemoignages()
+    {
+        return $this->temoignages;
     }
     
-}          
+    public function afficheTemoignages()
+    {
+        $review='';
+        $this->setHeader(file_get_contents("./template/header.html"));
+        $this->setFooter(file_get_contents("./template/footer.html"));
+        $this->setBody(file_get_contents("./template/temoignages.html"));
+            
+        $this->setTemoignages(file_get_contents("./template/temoignages.html"));
+        $review = $this->getTemoignages();
+        
+        {
+        $this->setBody(str_replace('{%temoignages%}', $review, $this->getBody()));
+        $this->setTemplate($this->getHeader().$this->getBody().$this->getFooter());
+        return $this->getTemplate();
+        }
+    }
 
-
+}

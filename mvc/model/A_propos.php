@@ -7,7 +7,7 @@
 
         <div class="landscape">
             
-            <img class="photo"src="img/cuisinière.jpg" alt="">
+            <img class="photo"src="./assets/img/cuisinière.jpg" alt="">
 
         </div>
 

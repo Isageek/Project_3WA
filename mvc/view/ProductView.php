@@ -117,7 +117,6 @@ class ProductView
         $this->setBody(file_get_contents("./template/categorys.html"));
 
         
-        //var_dump($this->getFooter()); die();
         $cat = '';
         foreach ($datas as $data) {
             
@@ -138,7 +137,8 @@ class ProductView
         $this->setHeader(file_get_contents("./template/header.html"));
         $this->setFooter(file_get_contents("./template/footer.html"));
         $this->setBody(file_get_contents("./template/ateliers.html"));
-        foreach ($datas2 as $data2) {
+        foreach ($datas2 as $data2) 
+    {
             
             $this->setAtelier(file_get_contents("./template/atelier.html"));
             $this->setAtelier(str_replace ('{%id2%}', $data2['id'], $this->getAtelier()));
@@ -149,9 +149,9 @@ class ProductView
             $this->setAtelier(str_replace ('{%name%}', $data2['name'], $this->getAtelier()));
             $this->setAtelier(str_replace ('{%description%}', $data2['description'], $this->getAtelier()));
         
-            $shop .= $this->getAtelier();
+            $shop  .= $this->getAtelier();
     
-            }
+    }
     
         $this->setBody(str_replace('{%ateliers%}', $shop, $this->getBody()));
         $this->setTemplate($this->getHeader().$this->getBody().$this->getFooter());
