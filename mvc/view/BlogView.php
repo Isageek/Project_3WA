@@ -8,7 +8,6 @@ class BlogView
     private $template;
     private $blog;
 
-
     /**
     * @params string $header
     */

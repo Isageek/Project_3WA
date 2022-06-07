@@ -8,7 +8,8 @@ class HomeView
     private $category;
     private $atelier;
     private $temoignages;
-    private $a_propos;
+    private $apropos;
+    private $blog;
 
 
 

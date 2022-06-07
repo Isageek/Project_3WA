@@ -36,7 +36,6 @@ class AdminController
         $data = $repository->fetchAteliers();
         echo $view->afficheAtelierAdmin($data, $csrf); die();
         //}
-        //echo $view->constructAccueil();
     }
     public function valideModify(): void
     {var_dump('yes');die();
@@ -48,13 +47,11 @@ class AdminController
         $view = new AdminView();
         $utils = new Utils();
         $csrf = $utils->addCsrf();
-        //if($this->verifyAdmin()==='ok'){
-        
+
         $repository= new ProductRepository();
         $valide = $repository->updateAtelier($created_at, $category_id, $url_picture, $id);
         echo $view->afficheAdmin($csrf); die();
-        //}
-        //echo $view->constructAccueil();
+        
     }
     public function valideDelete(): void
     { 
@@ -69,7 +66,6 @@ class AdminController
         $valide = $repository->DeleteAtelier($id);
         echo $view->afficheAdmin($csrf); die();
         //}
-        //echo $view->constructAccueil();
     }
     
 }

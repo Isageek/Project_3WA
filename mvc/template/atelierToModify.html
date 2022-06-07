@@ -1,23 +1,22 @@
-            
-               
-                
-                <form method="post" action="./index.php?url=valideModify">
-                    <td>{%id2%}</td><br>
-                    <td><input type="text" name="created_at" value="{%created_at%}"</td><br>
-                    <td><input type="text" name="category_id" value="{%category_id%}"/></td><br>
-                    <td><input type="text" name="url_picture" value="{%url_picture%}"/></td><br>
-                    <td>{%name%}</td><br>
-                    <td>{%description%}</td><br>
-                <br>
-                    <input type = "hidden" name ="csrf" value="{%csrf%}"/>
-                    <input type="submit" value="modifier"/>
-                </form>
-                <form method="post" action="./index.php?url=valideDelete">
-                    <input type = "hidden" name ="csrf" value="{%csrf%}"/>
-                    <input type = "hidden" name ="id" value="{%id2%}"/>
-                    <input type="submit" value="effacer"/>
-                </form><br>
-                <br><br><br><br>
+<section class="update">
+    
+<form method="post" action="./index.php?url=valideModify">
+    <td>{%id2%}</td><br>
+    <td><input type="text" name="created_at" value="{%created_at%}"</td><br>
+    <td><input type="text" name="category_id" value="{%category_id%}"/></td><br>
+    <td><input type="text" name="url_picture" value="{%url_picture%}"/></td><br>
+    
+    <br>
+    <input type = "hidden" name ="csrf" value="{%csrf%}"/>
+    <input type="submit" value="modifier"/>
+</form>
+<form method="post" action="./index.php?url=valideDelete">
+    <input type = "hidden" name ="csrf" value="{%csrf%}"/>
+    <input type = "hidden" name ="id" value="{%id2%}"/>
+    <input type="submit" value="effacer"/>
+</form><br>
+    
+</section>
 
             
         

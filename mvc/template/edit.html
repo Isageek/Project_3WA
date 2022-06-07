@@ -7,19 +7,15 @@
         <title>Ateliers Culinaires gratuits de recettes africaines</title>
         <meta name="description" content="."/>
 
-        
-        <!--lien font Awesome-->
-        
         <!-- fichier css-->
-        <link rel="stylesheet" href="admin_styles.css" type="text/css"/>
+        <link rel="stylesheet" href="./assets/styles.css" type="text/css"/>
 
-   
     </head>
     
     <body>
+    <section class=participant>
 
-    <h1 class="heading">Ajouter un participant</h1>
-
+    <h1 class="heading"><b>Ajouter un participant</b></h1>
 
     <form action="./index.php?url=register" method="post" class="insertUser">
         <input type="hidden" name="admin" value="ok"/>
@@ -44,61 +40,17 @@
         <button type="submit" name="submit"><b>Créer</b></button>
     </form>
     
-    
-    
-    <h1 class="titre">Modifier les informations d'un participant</h1>
+    <h3 class="heading">Modifier un atelier</h3>
 
 
-    <!--<form action="" method="post" class="insertUser">
-        
-        <div class="form-user">
-            <label for="nom"> nom: </label>
-            <input type="text" name="nom" >
-        </div>
-        <div class="form-user">
-            <label for="prenom"> prenom: </label>
-            <input type="text" name="prenom" >
-        </div>
-        <div class="form-user">
-            <label for="email"> email: </label>
-            <input type="text" name="email" >
-        </div>
-        <div class="form-user">
-            <label for="password"> Mot de passe: </label>
-            <input type="password" name="password" >
-        </div>
-        
-        <button type="submit" name="submit"><b>Changer</b></button>
-    </form>-->
     <a href="./index.php?url=update"> modifier</a>
     
     
-    <h1 class="titre">Supprimer un participant</h1>
+    <h3 class="heading"> Supprimer un atelier </h3>
 
-
-    <!--<form action="" method="post" class="insertUser">
-        
-        <div class="form-user">
-            <label for="nom"> nom: </label>
-            <input type="text" name="nom" >
-        </div>
-        <div class="form-user">
-            <label for="prenom"> prenom: </label>
-            <input type="text" name="prenom" >
-        </div>
-        <div class="form-user">
-            <label for="email"> email: </label>
-            <input type="text" name="email" >
-        </div>
-        <div class="form-user">
-            <label for="password"> Mot de passe: </label>
-            <input type="password" name="password" >
-        </div>
-        
-        <button type="submit" name="submit"><b>Supprimer</b></button>
-    </form>-->
     
     <a href="./index.php?url=update">supprimer</a>
+    </section>
 
 
 

@@ -13,7 +13,6 @@ require_once './controller/BlogController.php';
 
 
 
-
 $url = $_GET['url'] ?? "home";
 
 switch($url){
@@ -62,7 +61,7 @@ switch($url){
         $aproposController= new AproposController();
         $aproposController-> apropos();
         break;
-        // Route A propos
+        // Route Blog
 
     case "Blog" : 
         $blogController= new BlogController();

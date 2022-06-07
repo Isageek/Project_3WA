@@ -33,7 +33,7 @@ body{
 }
 
 section{
-    padding: 2rem 9%;
+    padding: 2rem;
     
 }
 
@@ -691,6 +691,7 @@ label {
 }
 
 .blogs .box-container .box .content{
+    
     padding:2rem;
 }
 
@@ -754,8 +755,35 @@ label {
         url('../assets/img/bissap.jpeg') white;
 }
 
+/**page admin edit*/
+.participant{
+    text-align:center;
+}
+.participant  h1{
+    font-size: 30px;
+    color:black;
+}
 
+.heading{
+    color: #ff7800;
+}
+.participant a{
+    font-size:20px;
+}
+button{
+    font-size:20px;
+}
 
+/**page admin update*/
+
+.update  form{
+    text-align:center;
+}
+.update  input{
+    font-size:20px;
+    border-style: groove;
+    border-color: #ff7800;
+}
 
 /**media queries*/
 
