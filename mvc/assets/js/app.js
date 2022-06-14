@@ -151,11 +151,11 @@ function addUserAtelier(id){
     }).then(x => x.text()).then(msg => {
         switch(msg.trim()){
             case 'already':
-                    openModal("Vous est deja enregistré")
+                    openModal("Vous est deja enregistré(e)")
                 break;
                 
             case 'login':
-                openModal("Vous devez être connecté avant toute inscription")
+                openModal("Vous devez être connecté(e) avant toute inscription")
                 break;
                 case 'ok':
                     openModal("Votre inscription à bien été prise en compte")

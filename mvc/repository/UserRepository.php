@@ -21,16 +21,13 @@ class UserRepository extends AbstractRepository {
         return $data;
     }
     
-    
-    
     public function insertUser($user): bool|PDOstatement
     {
             $password = password_hash($user->getPassword(), PASSWORD_BCRYPT);
             $user->setPassword($password);
 
         try {
-            $query = $this->connexion->prepare('INSERT INTO users (prenom, nom, email, password, role) 
-                                                VALUES (:prenom, :nom, :email, :password, :role )');
+            $query = $this->connexion->prepare('INSERT INTO users (prenom, nom, email, password, role) VALUES (:prenom, :nom, :email, :password, :role )');
             if ($query) {
                 $query->bindValue(':prenom', $user->getPrenom());
                 $query->bindValue(':nom', $user->getNom());
@@ -55,7 +52,6 @@ class UserRepository extends AbstractRepository {
             if ($query) {
                 $query-> bindValue(':email', $mail);
                 $query->execute();
-                //var_dump($query->execute()); die();
 
                 $data = $query->fetch(PDO::FETCH_ASSOC);
             }
