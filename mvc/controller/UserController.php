@@ -59,9 +59,9 @@ class UserController
             $user->setEmail($data['email']);
             $user->setPassword($data['password']);
             $user->setRole($data['role']);
-            
+            $user->setId($data['id']);
             //on serialize l'objet
-            $_SESSION['user']=serialize($user);
+            $_SESSION['user']= serialize($user);
 
             echo $view->viewLog_ok($csrf);
             

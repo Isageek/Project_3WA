@@ -1,13 +1,13 @@
 <?php
 
-
-class AproposView
+class NewsletterView
 {
     private $header;
     private $body;
     private $footer;
     private $template;
-    private $apropos;
+    private $temoignages;
+    private $newsletter;
 
 
     /**
@@ -74,33 +74,33 @@ class AproposView
         return $this->template;
     }
     /**
-    * @params string $apropos
+    * @params string $newsletter
     */
-    public function setApropos($apropos)
+    public function setNewsletter($newsletter)
     {
-        $this->apropos=$apropos;
+        $this->newsletter=$newsletter;
         
     }
     /**
-     * return string $this->apropos
+     * return string $this->newsletter
      */
-    public function getApropos()
+    public function getNewsletter()
     {
-        return $this->apropos;
+        return $this->newsletter;
     }
     
-    public function afficheApropos()
+    public function afficheNewsletter()
     {
-        $presentation='';
+        $journal='';
         $this->setHeader(file_get_contents("./template/header.html"));
         $this->setFooter(file_get_contents("./template/footer.html"));
-        $this->setBody(file_get_contents("./template/apropos.html"));
+        $this->setBody(file_get_contents("./template/newsletter.html"));
             
-        $this->setApropos(file_get_contents("./template/apropos.html"));
-        $presentation = $this->getApropos();
+        $this->setNewsletter(file_get_contents("./template/newsletter.html"));
+        $review = $this->getNewsletter();
         
         {
-        $this->setBody(str_replace('{%apropos%}', $presentation, $this->getBody()));
+        $this->setBody(str_replace('{%newsletter%}', $review, $this->getBody()));
         $this->setTemplate($this->getHeader().$this->getBody().$this->getFooter());
         return $this->getTemplate();
         }

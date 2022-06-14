@@ -1,6 +1,6 @@
-    <section class="background" id="background">
+        <section class="background" id="background">
     
-            <h1 class="heading"> Nos visiteurs <span> témoignent </span> de leur expérience</h1>
+            <h1 class="heading"> Des visiteurs <span> contents </span> de leur expérience</h1>
             
     
         </section>
@@ -56,13 +56,13 @@
             </div>
             
             <p>Je vous écris pour vous remercier de l'atelier culinaire sur le thème des bananes, le 12 février. J'ai été très heureuse de participer avec une si belle ambiance. Oui c'était très agréable de rencontrer de nouvelles personnes et d'apprendre aussi d'elles.</p>
+            </div>
             
             <div class="user">
                 <img src="img/pic-2.svg" alt="">
                 <div class="user-info">
                     <h3> Martine Bry</h3>
                 </div>
-            </div>
             <span class="fas fa-quote-right"></span>
             </div>
     
@@ -85,9 +85,7 @@
             </div>
             <span class="fas fa-quote-right"></span>
             </div>
-    
-        </div>
-        
+
         </section>
         
         <script src="app.js"></script>

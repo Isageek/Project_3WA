@@ -1,7 +1,5 @@
-
 <?php
 // Router
-
 require_once './controller/HomeController.php';
 require_once './controller/UserController.php';
 require_once './controller/ProductController.php';
@@ -9,8 +7,9 @@ require_once './controller/AdminController.php';
 require_once './controller/TemoignagesController.php';
 require_once './controller/AproposController.php';
 require_once './controller/BlogController.php';
+require_once './controller/NewsletterController.php';
 
-
+session_start();
 
 
 $url = $_GET['url'] ?? "home";
@@ -34,6 +33,10 @@ switch($url){
         $userController= new UserController();
         $userController->register();
         break;
+        case "logout": 
+            session_destroy();
+            header('location: ./index.php?url=home');
+        break;
     
     // Route category
     case "category" : 
@@ -47,6 +50,10 @@ switch($url){
         $productController= new ProductController();
         $productController->ateliers();
         break;
+    case "addUserAtelier" : 
+        $productController= new ProductController();
+        $productController->UserAteliers();
+        break;
         
     // Route témoignages
 
@@ -57,15 +64,23 @@ switch($url){
         
      // Route A propos
 
-    case "a propos" : 
+    case "a_propos" : 
         $aproposController= new AproposController();
         $aproposController-> apropos();
         break;
+        
         // Route Blog
 
-    case "Blog" : 
+    case "blog" : 
         $blogController= new BlogController();
         $blogController-> blog();
+        break;
+        
+        // Route Newsletter
+
+    case "newsletter" : 
+        $newsletterController= new NewsletterController();
+        $newsletterController-> newsletter();
         break;
         
     // Route admin

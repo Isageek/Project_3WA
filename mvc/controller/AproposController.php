@@ -1,5 +1,5 @@
 <?php
-require_once './view/A_proposView.php';
+require_once './view/AproposView.php';
 
 class AproposController{
     

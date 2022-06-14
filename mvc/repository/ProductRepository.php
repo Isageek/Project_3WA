@@ -130,7 +130,56 @@ class ProductRepository extends AbstractRepository {
                 $data = $query->execute();
                 return $data;
         } catch (Exception $e) {
+            die($e);
         }
         return $data;
    }
+   
+   //INSERT INTO `inscription_atelier`(`user_id`, `atelier_id`) VALUES (':user',':atelier')
+   
+       public function InsertUserAtelier($user, $atelier)
+    {
+        try {
+            $verify = $this->alreadyInAtelier($user, $atelier);
+
+            if($verify || is_null($verify)){
+                return null;
+            }
+            
+            $query = $this->connexion->prepare("INSERT INTO inscription_atelier(`user_id`, `atelier_id`) VALUES (:user, :atelier)");
+            
+            if ($query) {
+                
+                $query->bindValue(':user', $user);
+                $query->bindValue(':atelier', $atelier);
+                
+                return $query->execute();
+            }
+            
+ 
+        }
+        catch (Exception $e) {
+            
+            return $e ;
+        }
+    }
+    
+    public function alreadyInAtelier($user, $atelier)
+    {
+        try {
+            $query = $this->connexion->prepare("SELECT * from inscription_atelier WHERE user_id = :user AND atelier_id = :atelier");
+            
+            if ($query) {
+                $query->bindValue('user', $user);
+                $query->bindValue('atelier', $atelier);
+                
+                $query->execute();
+                return $query->fetch(PDO::FETCH_ASSOC);
+            }
+        }
+        catch (Exception $e) {
+            
+            return $e ;
+        }
+    }
 }

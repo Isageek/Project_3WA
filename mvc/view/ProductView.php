@@ -1,6 +1,4 @@
 <?php
-
-
 class ProductView
 {
     private $header;
@@ -9,7 +7,6 @@ class ProductView
     private $template;
     private $category;
     private $atelier;
-
 
     /**
     * @params string $header
@@ -20,7 +17,6 @@ class ProductView
         $this->header= $header;
         
     }
-    
     /**
      * return string $this->header
      */
@@ -139,6 +135,7 @@ class ProductView
         $this->setBody(file_get_contents("./template/ateliers.html"));
         foreach ($datas2 as $data2) 
     {
+
             
             $this->setAtelier(file_get_contents("./template/atelier.html"));
             $this->setAtelier(str_replace ('{%id2%}', $data2['id'], $this->getAtelier()));
