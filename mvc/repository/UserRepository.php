@@ -42,7 +42,6 @@ class UserRepository extends AbstractRepository {
         }
     }
     
-    
     public function fetchOneUser($mail)
     {
         $data = null;

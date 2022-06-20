@@ -222,12 +222,6 @@ section{
     color: black;
 }
 
-/**calendrier register*/
-label {
-    display: block;
-    font: 2rem 'Fira Sans', sans-serif;
-    color: #ff7800;
-}
 /**input register*/
 
 label {
